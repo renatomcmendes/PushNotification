@@ -3,14 +3,14 @@
         xmlns:gap = 'http://phonegap.com/ns/1.0'
         id        = "org.devgirl.pgb-push-app2"
         version   = "0.0.1">
-    <name>Push Plugin Sample</name>
+    <name>Push Notification</name>
 
     <description>
-        Push Plugin Sample for PhoneGap Build
+        APlicação Teste para PushNotification
     </description>
 
     <author href="http://devgirl.org" email="hschinsk@adobe.com">
-        Holly Schinsky
+        Renato Mendes
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
