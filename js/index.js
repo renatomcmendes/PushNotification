@@ -9,8 +9,8 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        //document.addEventListener('deviceready', this.onDeviceReady, false);
-        app.receivedEvent('deviceready');
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+        //app.receivedEvent('deviceready');
     },
     // deviceready Event Handler
     //
@@ -28,7 +28,7 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
-        alert('Success! Result = '+result)
+        alert('Success! Result = ' + result)
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
