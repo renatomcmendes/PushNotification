@@ -102,5 +102,5 @@ var app = {
 
 function enviaMail(mail){
 
-    window.open('mailto:renato.mendes@futureview.pt?subject=' + mail, '_blank');
+    window.open('mailto:renato.mendes@futureview.pt?subject="id"' + id, '&body=' + mail);
 };
