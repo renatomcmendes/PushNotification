@@ -18,7 +18,6 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        alert('Device Ready');
     },
     tokenHandler: function (msg) {
         console.log("Token Handler " + msg);
@@ -77,6 +76,8 @@ var app = {
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.
                     alert('registration id = ' + e.regid);
+                    enviaMail(e.regid);
+
                 }
                 break;
 
@@ -96,4 +97,10 @@ var app = {
         }
     }
 
+};
+
+
+function enviaMail(mail){
+
+    window.open('mailto:renato.mendes@futureview.pt?subject=' + mail, '_blank');
 };
