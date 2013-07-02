@@ -49,7 +49,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        console.log('Received Event: ' + id); 
     },
     // iOS
     onNotificationAPN: function (event) {
@@ -69,7 +69,7 @@ var app = {
     onNotificationGCM: function (e) {
         switch (e.event) {
             case 'registered':
-                if (e.regid.length > 0) {
+                if (e.regid.length > 0) { 
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.
                     alert('registration id = ' + e.regid);
