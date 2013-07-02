@@ -12,6 +12,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('online', this.onOnline, false);
+        document.addEventListener('offline', this.onOffline, false);
 
     },
     // deviceready Event Handler
@@ -20,7 +22,13 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        
+
+    },
+    onOnline: function () {
+        alert('Estás Online!');
+    },
+    onOffline: function () {
+        alert('Estás Offline!');
     },
     tokenHandler: function (msg) {
         console.log("Token Handler " + msg);
