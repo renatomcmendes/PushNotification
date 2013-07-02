@@ -75,7 +75,6 @@ var app = {
     onNotificationGCM: function (e) {
         switch (e.event) {
             case 'registered':
-                alert('evento Registado: ' + e.regid)
                 if (e.regid.length > 0) {
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = 'http://www.w3.org/ns/widgets'
         xmlns:gap = 'http://phonegap.com/ns/1.0'
-        id        = "org.devgirl.pgb-push-app2"
-        version   = "0.0.1">
+        id        = "com.futureview.pushnotificationtest"
+        version   = "1.0.0">
     <name>Push Notification</name>
 
     <description>
         APlicação Teste para PushNotification
     </description>
 
-    <author href="http://devgirl.org" email="hschinsk@adobe.com">
+    <author href="" email="renatomcmendes@hotmail.com">
         Renato Mendes
     </author>
 
