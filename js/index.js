@@ -1,4 +1,4 @@
-var token = '';
+var token;
 
 var app = {
 
@@ -12,8 +12,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener('online', this.onOnline, false);
-        document.addEventListener('offline', this.onOffline, false);
+        //document.addEventListener('online', this.onOnline, false);
+        //document.addEventListener('offline', this.onOffline, false);
 
     },
     // deviceready Event Handler
@@ -109,6 +109,6 @@ var app = {
 };
 
 function onEnviaMailClick(){
-    window.open('mailto:renato.mendes@futureview.pt?subject="Token de Aplicação"', '&body=' + token);
+    window.open('mailto:renato.mendes@futureview.pt?subject=Token de Aplicação' + token, '&body=' + token);
 };
 
