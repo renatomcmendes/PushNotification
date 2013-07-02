@@ -1,5 +1,7 @@
+var token = '';
 
 var app = {
+
     // Application Constructor
     initialize: function () {
         this.bindEvents();
@@ -10,6 +12,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        ('#btn_enviarMail').addEventListener("click", enviaMail(token), false);
 
     },
     // deviceready Event Handler
@@ -18,11 +21,13 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
+        
 
     },
     tokenHandler: function (msg) {
         console.log("Token Handler " + msg);
         alert("Sucesso!! Token = " + msg);
+        token = msg;
     },
     errorHandler: function (error) {
         console.log("Error Handler  " + error);
@@ -31,6 +36,7 @@ var app = {
     // result contains any message sent from the plugin call
     successHandler: function (result) {
         alert('Successo! ID = ' + result)
+        token = result;
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -49,7 +55,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id); 
+        console.log('Received Event: ' + id);
     },
     // iOS
     onNotificationAPN: function (event) {
@@ -69,7 +75,7 @@ var app = {
     onNotificationGCM: function (e) {
         switch (e.event) {
             case 'registered':
-                if (e.regid.length > 0) { 
+                if (e.regid.length > 0) {
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.
                     alert('registration id = ' + e.regid);
@@ -99,5 +105,5 @@ var app = {
 
 function enviaMail(mail){
 
-    window.open('mailto:renato.mendes@futureview.pt?subject="id"' + id, '&body=' + mail);
+    window.open('mailto:renato.mendes@futureview.pt?subject="Token de Aplicação"', '&body=' + mail);
 };
