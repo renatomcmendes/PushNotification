@@ -1,6 +1,6 @@
-var app = {
+var token = '';
 
-    token : '',
+var app = {
 
     // Application Constructor
     initialize: function () {
@@ -12,7 +12,6 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        
 
     },
     // deviceready Event Handler
@@ -21,12 +20,12 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        ('#btn_enviarMail').addEventListener("click", app.onEnviaMailClick(), false);
+        
     },
     tokenHandler: function (msg) {
         console.log("Token Handler " + msg);
         alert("Sucesso!! Token = " + msg);
-        this.token = msg;
+        token = msg;
     },
     errorHandler: function (error) {
         console.log("Error Handler  " + error);
@@ -35,7 +34,7 @@ var app = {
     // result contains any message sent from the plugin call
     successHandler: function (result) {
         alert('Successo! ID = ' + result)
-        this.token = result;
+        token = result;
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -97,12 +96,11 @@ var app = {
                 alert('An unknown GCM event has occurred');
                 break;
         }
-    },
-
-        
-    onEnviaMailClick : function(){
-        window.open('mailto:renato.mendes@futureview.pt?subject="Token de Aplicação"', '&body=' + this.token);
     }
 
+};
+
+function onEnviaMailClick(){
+    window.open('mailto:renato.mendes@futureview.pt?subject="Token de Aplicação"', '&body=' + this.token);
 };
 
