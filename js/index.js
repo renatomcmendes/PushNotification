@@ -29,8 +29,12 @@ var app = {
         alert('Estás Offline!');
     },
     tokenHandler: function (msg) {
-        onEnviaMailClick(msg);
+        //onEnviaMailClick(msg);
         //alert("Sucesso!! Token = " + msg);
+
+        var result = document.getElementById("p_token");
+        result.innerText = '';
+        result.innerText = msg;
     },
     errorHandler: function (error) {
         console.log("Error Handler  " + error);
@@ -39,8 +43,11 @@ var app = {
     // result contains any message sent from the plugin call
     successHandler: function (result) {
         //window.localStorage.setItem('token', result);
-        onEnviaMailClick(result);
+        //onEnviaMailClick(result);
         //alert('Successo! ID = ' + result)
+        var result = document.getElementById("p_token");
+        result.innerText = '';
+        result.innerText = result;
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -83,7 +90,7 @@ var app = {
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.
                     alert('registration id = ' + e.regid);
-                     onEnviaMailClick(e.regid);
+                    onEnviaMailClick(e.regid);
                     //   enviaMail(e.regid);
 
                 }
@@ -107,8 +114,9 @@ var app = {
 
 };
 
-function onEnviaMailClick(l_token){
+function onEnviaMailClick(){
     //var l_token = window.localStorage.getItem('token');
-    window.open('mailto:renato.mendes@futureview.pt?subject=' + l_token + ''); //&body=' + l_token + '');
+    var result = document.getElementById("p_token");
+    window.open('mailto:renato.mendes@futureview.pt?subject=' + result.innerText + ''); //&body=' + l_token + '');
 };
 
