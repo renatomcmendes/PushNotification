@@ -52,7 +52,7 @@ var app = {
     },
     // iOS
     onNotificationAPN: function (event) {
-        alert('Evento!! ' + event.alert))
+        alert('Evento!! ' + event.alert);
         var pushNotification = window.plugins.pushNotification;
         console.log("Received a notification! " + event.alert);
         console.log("event sound " + event.sound);
