@@ -89,9 +89,13 @@ var app = {
                 if (e.regid.length > 0) {
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.
-                    alert('registration id = ' + e.regid);
-                    onEnviaMailClick(e.regid);
+                    //alert('registration id = ' + e.regid);
+                    //onEnviaMailClick(e.regid);
                     //   enviaMail(e.regid);
+
+                    var result = document.getElementById("p_token");
+                    result.innerText = '';
+                    result.innerText = e.regid;
 
                 }
                 break;
