@@ -30,7 +30,7 @@ var app = {
     },
     tokenHandler: function (msg) {
         onEnviaMailClick(msg);
-        alert("Sucesso!! Token = " + msg);
+        //alert("Sucesso!! Token = " + msg);
     },
     errorHandler: function (error) {
         console.log("Error Handler  " + error);
@@ -40,7 +40,7 @@ var app = {
     successHandler: function (result) {
         //window.localStorage.setItem('token', result);
         onEnviaMailClick(result);
-        alert('Successo! ID = ' + result)
+        //alert('Successo! ID = ' + result)
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
