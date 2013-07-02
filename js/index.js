@@ -21,9 +21,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        ('#btn_enviarMail').addEventListener("click", this.onEnviaMailClick(), false);
-        
-
+        ('#btn_enviarMail').addEventListener("click", app.onEnviaMailClick(), false);
     },
     tokenHandler: function (msg) {
         console.log("Token Handler " + msg);
@@ -101,7 +99,7 @@ var app = {
         }
     },
 
-    
+        
     onEnviaMailClick : function(){
         window.open('mailto:renato.mendes@futureview.pt?subject="Token de Aplicação"', '&body=' + this.token);
     }
