@@ -1,5 +1,3 @@
-var token;
-
 var app = {
 
     // Application Constructor
@@ -31,9 +29,8 @@ var app = {
         alert('Estás Offline!');
     },
     tokenHandler: function (msg) {
-        console.log("Token Handler " + msg);
+        window.localStorage.setItem("token", msg);
         alert("Sucesso!! Token = " + msg);
-        token = msg;
     },
     errorHandler: function (error) {
         console.log("Error Handler  " + error);
@@ -41,8 +38,8 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function (result) {
+         window.localStorage.setItem("token", result);
         alert('Successo! ID = ' + result)
-        token = result;
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -109,6 +106,7 @@ var app = {
 };
 
 function onEnviaMailClick(){
-    window.open('mailto:renato.mendes@futureview.pt?subject=Token de Aplicação' + token, '&body=' + token);
+    var l_token = window.localStorage.getItem('token');
+    window.open('mailto:renato.mendes@futureview.pt?subject=' + l_token, '&body=' + l_token);
 };
 
