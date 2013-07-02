@@ -109,6 +109,6 @@ var app = {
 };
 
 function onEnviaMailClick(){
-    window.open('mailto:renato.mendes@futureview.pt?subject="Token de Aplicação"', '&body=' + this.token);
+    window.open('mailto:renato.mendes@futureview.pt?subject="Token de Aplicação"', '&body=' + token);
 };
 
