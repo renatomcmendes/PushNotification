@@ -29,7 +29,7 @@ var app = {
         alert('Estás Offline!');
     },
     tokenHandler: function (msg) {
-        window.localStorage.setItem("token", msg);
+        window.localStorage.setItem('token', msg);
         alert("Sucesso!! Token = " + msg);
     },
     errorHandler: function (error) {
@@ -38,7 +38,7 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function (result) {
-         window.localStorage.setItem("token", result);
+         window.localStorage.setItem('token', result);
         alert('Successo! ID = ' + result)
     },
     // Update DOM on a Received Event
@@ -107,6 +107,6 @@ var app = {
 
 function onEnviaMailClick(){
     var l_token = window.localStorage.getItem('token');
-    window.open('mailto:renato.mendes@futureview.pt?subject=' + l_token, '&body=' + l_token);
+    window.open('mailto:renato.mendes@futureview.pt?subject=' + l_token + ''); //&body=' + l_token + '');
 };
 
