@@ -22,7 +22,7 @@ var app = {
     },
     tokenHandler: function (msg) {
         console.log("Token Handler " + msg);
-        alert("Token Handler " + msg);
+        alert("Sucesso!! Token = " + msg);
     },
     errorHandler: function (error) {
         console.log("Error Handler  " + error);
@@ -30,7 +30,7 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function (result) {
-        alert('Success! Result = ' + result)
+        alert('Successo! ID = ' + result)
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -53,17 +53,11 @@ var app = {
     },
     // iOS
     onNotificationAPN: function (event) {
-        alert('Evento!! ' + event.alert);
         var pushNotification = window.plugins.pushNotification;
-        console.log("Received a notification! " + event.alert);
-        console.log("event sound " + event.sound);
-        console.log("event badge " + event.badge);
-        console.log("event " + event);
         if (event.alert) {
             navigator.notification.alert(event.alert);
         }
         if (event.badge) {
-            console.log("Set badge on  " + pushNotification);
             pushNotification.setApplicationIconBadgeNumber(this.successHandler, event.badge);
         }
         if (event.sound) {
