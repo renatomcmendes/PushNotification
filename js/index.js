@@ -33,8 +33,8 @@ var app = {
         //alert("Sucesso!! Token = " + msg);
 
         var result = document.getElementById("p_token");
-        result.innerText = '';
-        result.innerText = msg;
+        result.value = '';
+        result.value = msg;
     },
     errorHandler: function (error) {
         console.log("Error Handler  " + error);
@@ -46,8 +46,8 @@ var app = {
         //onEnviaMailClick(result);
         //alert('Successo! ID = ' + result)
         var result = document.getElementById("p_token");
-        result.innerText = '';
-        result.innerText = result;
+        result.value = '';
+        result.value = result;
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -94,8 +94,8 @@ var app = {
                     //   enviaMail(e.regid);
 
                     var result = document.getElementById("p_token");
-                    result.innerText = '';
-                    result.innerText = e.regid;
+                    result.value = '';
+                    result.value = e.regid;
 
                 }
                 break;
