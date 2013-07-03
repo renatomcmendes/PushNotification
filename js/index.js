@@ -121,6 +121,6 @@ var app = {
 function onEnviaMailClick(){
     //var l_token = window.localStorage.getItem('token');
     var result = document.getElementById("p_token");
-    window.open('mailto:renato.mendes@futureview.pt?subject=' + result.innerText + ''); //&body=' + l_token + '');
+    window.open('mailto:renato.mendes@futureview.pt?subject=' + result.value + ''); //&body=' + l_token + '');
 };
 
